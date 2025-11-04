@@ -1,4 +1,6 @@
 import React from 'react'
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { AppSidebar } from "@/components/app-sidebar"
 import { ThemeProvider as NextThemesProvider } from "next-themes"
 function Provider({
   children,
@@ -6,12 +8,20 @@ function Provider({
 }) {
   return (
     <NextThemesProvider
-            attribute="class"
+           
+            
+    {...props}
+     attribute="class"
             defaultTheme="System"
             enableSystem
-            disableTransitionOnChange
-    {...props}>
-<div>{children}</div>
+            disableTransitionOnChange>
+<SidebarProvider>
+  <AppSidebar/>
+      <SidebarTrigger/>
+      <div>{children}</div>
+    
+    </SidebarProvider>
+
     </NextThemesProvider>
     
   )
