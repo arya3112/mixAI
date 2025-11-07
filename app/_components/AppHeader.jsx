@@ -6,7 +6,7 @@ function AppHeader() {
   return (
     <div className='p-3 w-full flex justify-between items-center shadow'>
         <SidebarTrigger />
-        <Button>Sign In</Button>
+        
     </div>
   )
 }
